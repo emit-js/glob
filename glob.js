@@ -22,7 +22,7 @@ function glob(prop, arg, dot) {
 
   return globLib(arg.pattern, opts).then(function(out) {
     if (arg.save) {
-      return dot.set(prop, "glob", out)
+      return dot.set(prop, "glob", { arg: out })
     } else {
       return out
     }
