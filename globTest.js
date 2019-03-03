@@ -1,10 +1,10 @@
 /* eslint-env jest */
 
-var dot = require("dot-event")(),
+var dot,
   glob = require("./glob")
 
 beforeEach(function() {
-  dot.reset()
+  dot = require("dot-event")()
   glob(dot)
 })
 
