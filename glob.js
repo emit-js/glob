@@ -6,13 +6,10 @@ var globWithCallback = require("glob"),
 
 var globLib = promisify(globWithCallback)
 
-module.exports = function(dot, opts) {
-  if (dot.state.glob) {
+module.exports = function(dot) {
+  if (dot.glob) {
     return
   }
-
-  opts = opts || {}
-  dot.state.glob = opts
 
   dot.any("glob", glob)
 }
