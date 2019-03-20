@@ -15,7 +15,7 @@ module.exports = function(dot) {
 }
 
 function glob(prop, arg, dot) {
-  var opts = Object.assign({}, dot.state.glob, arg)
+  var opts = Object.assign({}, arg)
 
   return globLib(arg.pattern, opts).then(function(out) {
     if (arg.save) {
