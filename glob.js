@@ -19,7 +19,11 @@ function glob(prop, arg, dot) {
     pattern = arg.pattern
 
   if (Array.isArray(arg.pattern)) {
-    pattern = "{" + arg.pattern.join(",") + "}"
+    if (arg.pattern.length > 1) {
+      pattern = "{" + arg.pattern.join(",") + "}"
+    } else {
+      pattern = arg.pattern[0]
+    }
   }
 
   return globLib(pattern, opts).then(function(out) {

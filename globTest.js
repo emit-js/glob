@@ -29,3 +29,12 @@ test("globs w/ array", function() {
       ])
     })
 })
+
+test("globs w/ single element array", function() {
+  expect.assertions(1)
+  return dot
+    .glob({ pattern: ["*.md"] })
+    .then(function(paths) {
+      expect(paths).toEqual(["README.md"])
+    })
+})
