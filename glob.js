@@ -15,9 +15,14 @@ module.exports = function(dot) {
 }
 
 function glob(prop, arg, dot) {
-  var opts = Object.assign({}, arg)
+  var opts = Object.assign({}, arg),
+    pattern = arg.pattern
 
-  return globLib(arg.pattern, opts).then(function(out) {
+  if (Array.isArray(arg.pattern)) {
+    pattern = "{" + arg.pattern.join(",") + "}"
+  }
+
+  return globLib(pattern, opts).then(function(out) {
     if (arg.save) {
       return dot.set(prop, "glob", { arg: out })
     } else {
