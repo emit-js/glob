@@ -1,6 +1,6 @@
 {
   "name": "@emit-js/glob",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "emit file glob",
   "keywords": [
     "emit",
