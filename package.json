@@ -3,7 +3,7 @@
   "version": "0.0.9",
   "description": "emit file glob",
   "keywords": [
-    "@emit-js/emit",
+    "emit",
     "file",
     "glob"
   ],
