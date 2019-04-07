@@ -6,15 +6,15 @@ var globWithCallback = require("glob"),
 
 var globLib = promisify(globWithCallback)
 
-module.exports = function(dot) {
-  if (dot.glob) {
+module.exports = function(emit) {
+  if (emit.glob) {
     return
   }
 
-  dot.any("glob", glob)
+  emit.any("glob", glob)
 }
 
-function glob(prop, arg, dot) {
+function glob(arg, prop, emit) {
   var opts = Object.assign({}, arg),
     pattern = arg.pattern
 
@@ -28,7 +28,7 @@ function glob(prop, arg, dot) {
 
   return globLib(pattern, opts).then(function(out) {
     if (arg.save) {
-      return dot.set(prop, "glob", { arg: out })
+      return emit.set(prop, "glob", out)
     } else {
       return out
     }

@@ -1,16 +1,16 @@
 /* eslint-env jest */
 
-var dot,
+var emit,
   glob = require("./glob")
 
 beforeEach(function() {
-  dot = require("dot-event")()
-  glob(dot)
+  emit = require("@emit-js/emit")()
+  glob(emit)
 })
 
 test("globs", function() {
   expect.assertions(1)
-  return dot
+  return emit
     .glob({ pattern: "*.js" })
     .then(function(paths) {
       expect(paths).toEqual(["glob.js", "globTest.js"])
@@ -19,7 +19,7 @@ test("globs", function() {
 
 test("globs w/ array", function() {
   expect.assertions(1)
-  return dot
+  return emit
     .glob({ pattern: ["*.js", "*.md"] })
     .then(function(paths) {
       expect(paths).toEqual([
@@ -32,7 +32,7 @@ test("globs w/ array", function() {
 
 test("globs w/ single element array", function() {
   expect.assertions(1)
-  return dot
+  return emit
     .glob({ pattern: ["*.md"] })
     .then(function(paths) {
       expect(paths).toEqual(["README.md"])
