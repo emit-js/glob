@@ -1,6 +1,6 @@
 {
   "name": "@emit-js/glob",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "emit file glob",
   "keywords": [
     "emit",
@@ -25,7 +25,7 @@
     "glob": "7.1.3"
   },
   "devDependencies": {
-    "@emit-js/emit": "3.2.8",
+    "@emit-js/emit": "3.2.9",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-prettier": "3.0.1",
